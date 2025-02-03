@@ -33,3 +33,6 @@ cursor.execute('''
                 nome_build TEXT NOT NULL
                 )               
                 ''')
+
+connection.commit()
+connection.close()
