@@ -7,3 +7,7 @@ cursor.execute('SELECT id_role, nome_role FROM roles')
 resultados = cursor.fetchall()
 for roles in resultados:
     print(roles)
+
+cursor.execute('SELECT id_role, nome_role FROM roles WHERE nome_role = "MID";')
+for roles in resultados:
+    print(roles)

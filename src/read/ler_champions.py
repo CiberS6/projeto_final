@@ -7,3 +7,8 @@ cursor.execute('SELECT id_champion, nome_champion FROM champions')
 resultados = cursor.fetchall()
 for champions in resultados:
     print(champions)
+
+cursor.execute('SELECT id_champion, nome_champion FROM champions WHERE nome_champion = "Akali"\n')
+resultados = cursor.fetchall()
+for champions in resultados:
+    print(champions)

@@ -88,16 +88,17 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 ### Scripts Individuais
 
 - **`criar_tabelas.py`:** Cria as tabelas principais na base de dados.
-- **`inserir_picks.py`:** Adiciona novos picks com campeões, roles e builds
-- **`inserir_champions.py`:** Adiciona novos campeões.
 - **`inserir_builds.py`:** Adiciona novas builds.
+- **`inserir_champions.py`:** Adiciona novos campeões.
+- **`inserir_picks.py`:** Adiciona novos picks com campeões, roles e builds
 - **`inserir_roles.py`:** Adiciona novos roles.
-- **`eliminar_champions.py`:** Exclui registros específicos da tabela `champions`.
-- **`ler_champions.py`:** Realiza consultas na tabela `champions`.
+- **`eliminar_picks.py`:** Exclui registros específicos da tabela `picks`.
 - **`ler_builds.py`:** Realiza consultas na tabela `builds`.
+- **`ler_champions.py`:** Realiza consultas na tabela `champions`.
+- **`ler_picks.py`:** Realiza consultas na tabela `picks`.
 - **`ler_roles.py`:** Realiza consultas na tabela `roles`.
-- **`atualizar_picks.py`:** .
-- **`eliminar_picks.py`:** .
+- **`atualizar_picks.py`:** Atualiza os registos na tabela `picks`.
+
 
 
 ## Exemplos de Consultas
