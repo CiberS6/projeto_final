@@ -36,37 +36,36 @@ src/
 
 A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 
-1. **champions**
-   - `id_champion` (INTEGER, Chave Primária)
-   - `nome_champion` (TEXT, Obrigatório)
-   - `id_role` (INTEGER, Chave Estrangeira para a tabela `roles`)
-   - `id_build` (INTEGER, Chave Estrangeira para a tabela `builds`)
-
-2. **roles**
-   - `id_role` (INTEGER, Chave Primária)
-   - `nome_role` (TEXT, Obrigatório)
-
-3. **builds**
-   - `id_build` (INTEGER, Chave Primária)
-   - `nome_build` (TEXT, Obrigatório)
-
-4. **picks** (referenciada em exemplos, mas ainda não implementada no código atual)
+1. **picks** (referenciada em exemplos, mas ainda não implementada no código atual)
    - `id_pick` (INTEGER, Chave Primária)
    - `nome_pick` (TEXT,Obrigatório)
    - `id_champion` (INTEGER, Chave Estrangeira para a tabela `champions`)
    - `id_role` (INTEGER, Chave Estrangeira para a tabela `roles`)
+   - `id_build` (INTEGER, Chave Estrangeira para a tabela `builds`)
+
+2. **champions**
+   - `id_champion` (INTEGER, Chave Primária)
+   - `nome_champion` (TEXT, Obrigatório)
+
+3. **roles**
+   - `id_role` (INTEGER, Chave Primária)
+   - `nome_role` (TEXT, Obrigatório)
+
+4. **builds**
+   - `id_build` (INTEGER, Chave Primária)
+   - `nome_build` (TEXT, Obrigatório)
+
 
 ## Funcionalidades
 
-- **Criação de tabelas:** Cria automaticamente as tabelas `champions`, `roles` e `builds`, caso ainda não existam.
+- **Criação de tabelas:** Cria automaticamente as tabelas `picks`, `champions`, `roles` e `builds`, caso ainda não existam.
 - **Inserção de dados:** Permite adicionar registros manualmente em todas as tabelas.
 - **Consulta de dados:** Realiza consultas SELECT para:
-  - Buscar campeões ordenados alfabeticamente.
-  - Realizar joins entre tabelas para obter detalhes combinados.
+  - Listar todos os picks criados.
   - Obter detalhes de um campeão ou role pelo nome.
   - Listar todos os campeões cadastrados.
-- **Exclusão de dados:** Remove registros específicos na tabela `champions`.
-- **Atualização de dados:** Atualiza campos existentes na tabela `champions`.
+- **Exclusão de dados:** Remove registros específicos na tabela `picks`.
+- **Atualização de dados:** Atualiza campos existentes na tabela `picks`.
 
 ## Utilização
 
@@ -118,19 +117,6 @@ Abaixo estão exemplos de consultas realizadas pelos scripts:
 3. Obter detalhes de uma função pelo nome (`nome_role = "Mid"`):
    ```sql
    SELECT id_role, nome_role FROM roles WHERE nome_role = "Mid";
-   ```
-
-4. Listar todos os campeões em ordem alfabética:
-   ```sql
-   SELECT * FROM champions ORDER BY nome_champion;
-   ```
-
-5. Realizar join para obter detalhes combinados de campeões, roles e builds:
-   ```sql
-   SELECT champions.id_champion, champions.nome_champion, roles.nome_role, builds.nome_build
-   FROM champions
-   INNER JOIN roles ON champions.id_role = roles.id_role
-   INNER JOIN builds ON champions.id_build = builds.id_build;
    ```
 
 ## Contribuições
