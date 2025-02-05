@@ -17,18 +17,18 @@ src/
 │   └── main.py           # Script principal que inicializa e interage com a base de dados
 ├── create/
 │   ├── criar_tabelas.py            # Script para criar tabelas na base de dados
-│   ├── criar_tabela_temporaria.py  # Script para criar tabelas temporárias ordenadas
+│   ├── inserir_picks.py            # Script para inserir dados na tabela 'picks'
 │   ├── inserir_builds.py           # Script para inserir dados na tabela 'builds'
 │   ├── inserir_champions.py        # Script para inserir dados na tabela 'champions'
 │   └── inserir_roles.py            # Script para inserir dados na tabela 'roles'
 ├── delete/
-│   └── eliminar_champions.py      # Script para excluir registros na tabela 'champions'
+│   └── eliminar_picks.py      # Script para excluir registros na tabela 'champions'
 ├── read/
 │   ├── ler_champions.py           # Script para consultar dados na tabela 'champions'
-│   ├── ler_champions_ordem.py     # Script para consultar dados de campeões ordenados
-│   └── ler_inner_join.py          # Script para realizar joins entre tabelas
+│   ├── ler_builds.py              # Script para consultar dados na tabela 'builds'
+│   └── ler_roles.py               # Script para consultar dados na tabela 'roles'
 ├── update/
-│   └── atualizar_champions.py     # Script para atualizar dados na tabela 'champions'
+│   └── atualizar_picks.py     # Script para atualizar dados na tabela 'champions'
 └── README.md                      # Documentação do projeto
 ```
 
@@ -52,6 +52,7 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 
 4. **picks** (referenciada em exemplos, mas ainda não implementada no código atual)
    - `id_pick` (INTEGER, Chave Primária)
+   - `nome_pick` (TEXT,Obrigatório)
    - `id_champion` (INTEGER, Chave Estrangeira para a tabela `champions`)
    - `id_role` (INTEGER, Chave Estrangeira para a tabela `roles`)
 
@@ -87,13 +88,17 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 ### Scripts Individuais
 
 - **`criar_tabelas.py`:** Cria as tabelas principais na base de dados.
-- **`criar_tabela_temporaria.py`:** Cria tabelas temporárias para ordenação e manipulação.
-- **`inserir_champions.py`:** Adiciona novos campeões com seus respectivos roles e builds.
+- **`inserir_picks.py`:** Adiciona novos picks com campeões, roles e builds
+- **`inserir_champions.py`:** Adiciona novos campeões.
+- **`inserir_builds.py`:** Adiciona novas builds.
+- **`inserir_roles.py`:** Adiciona novos roles.
 - **`eliminar_champions.py`:** Exclui registros específicos da tabela `champions`.
 - **`ler_champions.py`:** Realiza consultas na tabela `champions`.
-- **`ler_champions_ordem.py`:** Lista campeões em ordem alfabética.
-- **`ler_inner_join.py`:** Realiza joins entre tabelas para obter informações combinadas.
-- **`atualizar_champions.py`:** Atualiza registros na tabela `champions`.
+- **`ler_builds.py`:** Realiza consultas na tabela `builds`.
+- **`ler_roles.py`:** Realiza consultas na tabela `roles`.
+- **`atualizar_picks.py`:** .
+- **`eliminar_picks.py`:** .
+
 
 ## Exemplos de Consultas
 
