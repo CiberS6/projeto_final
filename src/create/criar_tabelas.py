@@ -1,15 +1,15 @@
 import sqlite3
 
-connection = sqlite3.connect('')
+connection = sqlite3.connect('C:\\users\\ba2490\\Desktop\\projeto_final\\projeto_final\\sqlite_database\\lol.db')
 cursor = connection.cursor()
 
 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS picks (
                 id_pick INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome_pick TEXT NOT NULL,
-                id_champion FOREIGN KEY INTEGER NOT NULL,
-                id_roles INTEGER FOREIGN KEY NOT NULL,
-                id_builds INTEGER FOREIGN KEY NOT NULL
+                id_champion INTEGER NOT NULL,
+                id_roles INTEGER NOT NULL,
+                id_builds INTEGER NOT NULL
                 )
                 ''')
 
