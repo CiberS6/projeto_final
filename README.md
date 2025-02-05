@@ -1,6 +1,6 @@
 # Projeto SQLite para Gerir os Picks do League of Legends
 
-Este projeto apresenta uma aplicação baseada em SQLite para gerir dados relacionados a campeões, funções (roles) e builds no League of Legends.
+Este projeto apresenta uma aplicação baseada em SQLite para gerir dados relacionados a campeões, funções (roles) e builds para inserir num registo de picks do League of Legends.
 
 ## Estrutura do Projeto
 
@@ -9,9 +9,6 @@ A estrutura do diretório está organizada da seguinte forma:
 ```
 sqlite_database/
 ├── lol.db                # Arquivo principal da base de dados SQLite
-├── lol copy.db           # Cópia de segurança do banco de dados
-├── lol copy 2.db         # Outra cópia de segurança do banco de dados
-├── lol copy 3.db         # Outra cópia de segurança do banco de dados
 src/
 ├── app/
 │   └── main.py           # Script principal que inicializa e interage com a base de dados
