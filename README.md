@@ -14,15 +14,16 @@ src/
 │   └── main.py           # Script principal que inicializa e interage com a base de dados
 ├── create/
 │   ├── criar_tabelas.py            # Script para criar tabelas na base de dados
-│   ├── inserir_picks.py            # Script para inserir dados na tabela 'picks'
 │   ├── inserir_builds.py           # Script para inserir dados na tabela 'builds'
 │   ├── inserir_champions.py        # Script para inserir dados na tabela 'champions'
+│   ├── inserir_picks.py            # Script para inserir dados na tabela 'picks'
 │   └── inserir_roles.py            # Script para inserir dados na tabela 'roles'
 ├── delete/
 │   └── eliminar_picks.py      # Script para excluir registros na tabela 'champions'
 ├── read/
-│   ├── ler_champions.py           # Script para consultar dados na tabela 'champions'
 │   ├── ler_builds.py              # Script para consultar dados na tabela 'builds'
+│   ├── ler_champions.py           # Script para consultar dados na tabela 'champions'
+│   ├── ler_picks.py               # Script para consultar dados na tabela 'picks'
 │   └── ler_roles.py               # Script para consultar dados na tabela 'roles'
 ├── update/
 │   └── atualizar_picks.py     # Script para atualizar dados na tabela 'champions'
