@@ -23,6 +23,7 @@ src/
 ├── read/
 │   ├── ler_builds.py              # Script para consultar dados na tabela 'builds'
 │   ├── ler_champions.py           # Script para consultar dados na tabela 'champions'
+│   ├── ler_inner_join.py          # Script para realizar joins entre tabelas
 │   ├── ler_picks.py               # Script para consultar dados na tabela 'picks'
 │   └── ler_roles.py               # Script para consultar dados na tabela 'roles'
 ├── update/
@@ -61,6 +62,7 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 - **Consulta de dados:** Realiza consultas SELECT para:
   - Listar todos os picks criados.
   - Obter detalhes de um campeão ou role pelo nome.
+  - Realizar joins entre tabelas para obter detalhes combinados.
   - Listar todos os campeões cadastrados.
 - **Exclusão de dados:** Remove registros específicos na tabela `picks`.
 - **Atualização de dados:** Atualiza campos existentes na tabela `picks`.
@@ -92,6 +94,7 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 - **`eliminar_picks.py`:** Exclui registros específicos da tabela `picks`.
 - **`ler_builds.py`:** Realiza consultas na tabela `builds`.
 - **`ler_champions.py`:** Realiza consultas na tabela `champions`.
+- **`ler_inner_join.py`:** Realiza joins entre tabelas para obter informações combinadas.
 - **`ler_picks.py`:** Realiza consultas na tabela `picks`.
 - **`ler_roles.py`:** Realiza consultas na tabela `roles`.
 - **`atualizar_picks.py`:** Atualiza os registos na tabela `picks`.
@@ -115,6 +118,15 @@ Abaixo estão exemplos de consultas realizadas pelos scripts:
 3. Obter detalhes de uma função pelo nome (`nome_role = "Mid"`):
    ```sql
    SELECT id_role, nome_role FROM roles WHERE nome_role = "Mid";
+   ```
+
+4. Realizar join para obter detalhes combinados de campeões, roles e builds:
+   ```sql
+   SELECT picks.nome_pick, champions.nome_champion, roles.nome_role, builds.nome_build
+   FROM picks
+   INNER JOIN champions ON picks.id_champion = champions.id_champion
+   INNER JOIN roles ON picks.id_roles = roles.id_role
+   INNER JOIN builds ON picks.id_builds = builds.id_build
    ```
 
 ## Contribuições
