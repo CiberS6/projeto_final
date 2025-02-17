@@ -14,6 +14,17 @@ cursor.execute('''
                 ''')
 
 cursor.execute('''
+                CREATE TABLE IF NOT EXISTS jogo (
+               id_jogo INTEGER PRIMARY KEY AUTOINCREMENT,
+               id_pick INTEGER NOT NULL,
+               kills INTEGER NOT NULL,
+               deaths INTEGER NOT NULL,
+               assists INTEGER NOT NULL,
+               vitoria_derrota BOOL NOT NULL
+               )
+               ''')
+
+cursor.execute('''
                 CREATE TABLE IF NOT EXISTS champions (
                 id_champion INTEGER PRIMARY KEY AUTOINCREMENT,
                 nome_champion TEXT NOT NULL
