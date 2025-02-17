@@ -13,6 +13,7 @@ db_path = os.path.join(base_dir, 'sqlite_database', 'lol.db')
 
 connection = sqlite3.connect(db_path)
 cursor = connection.cursor()
+
 def inserir_jogo():
     ler_picks()
     pick = input("Insira o id do pick: ")
@@ -27,5 +28,7 @@ def inserir_jogo():
     VALUES (?, ?, ?, ?, ?)
 ''', (pick, kils, deaths, assists, win_lose))
     
+    connection.commit()
+    connection.close()
+    
 
-inserir_jogo()
