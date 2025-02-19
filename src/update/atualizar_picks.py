@@ -119,11 +119,12 @@ def atualizar_pick():
                 break  # Sai do loop de edição de campos
 
 # Executar a função
-while True:
-    atualizar_pick()
-    continuar_script = input("\nDeseja editar outro pick? (s/n): ").strip().lower()
-    if continuar_script != 's':
-        break
+def update_this():
+    while True:
+        atualizar_pick()
+        continuar_script = input("\nDeseja editar outro pick? (s/n): ").strip().lower()
+        if continuar_script != 's':
+            break
 
 # Fechar conexão
 connection.close()

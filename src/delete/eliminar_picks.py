@@ -52,6 +52,5 @@ def eliminar_pick():
     finally:
         connection.close()
 
-# Chamada da função
-eliminar_pick()
+
 
