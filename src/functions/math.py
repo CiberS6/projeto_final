@@ -38,4 +38,3 @@ def winrate():
 
 
 
-winrate()
