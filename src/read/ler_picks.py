@@ -18,6 +18,19 @@ cursor = connection.cursor()
 def ler_picks():
     cursor.execute('SELECT id_pick, id_champion, id_roles FROM picks')
     resultados = cursor.fetchall()
-    for champions in resultados:
-        print(champions)
+
+    cursor.execute('''
+                    SELECT picks.nome_pick, champions.nome_champion, roles.nome_role, builds.nome_build
+                    FROM picks
+                    INNER JOIN champions ON picks.id_champion = champions.id_champion
+                    INNER JOIN roles ON picks.id_roles = roles.id_role
+                    INNER JOIN builds ON picks.id_builds = builds.id_build
+    ''')
+
+    # Resultados do inner join
+    resultados_ = cursor.fetchall()
+    for i,champions in zip(resultados_,resultados):
+        print(i," ",champions)
+    
+    
 
