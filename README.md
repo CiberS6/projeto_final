@@ -16,10 +16,13 @@ src/
 │   ├── criar_tabelas.py            # Script para criar tabelas na base de dados
 │   ├── inserir_builds.py           # Script para inserir dados na tabela 'builds'
 │   ├── inserir_champions.py        # Script para inserir dados na tabela 'champions'
+│   ├── inserir_jogo.py             # Script para inserir dados na tabela 'jogo'
 │   ├── inserir_picks.py            # Script para inserir dados na tabela 'picks'
 │   └── inserir_roles.py            # Script para inserir dados na tabela 'roles'
 ├── delete/
 │   └── eliminar_picks.py      # Script para excluir registros na tabela 'champions'
+├── functions/
+│   └── math.py                # Script para efetuar cálculos matemáticos
 ├── read/
 │   ├── ler_builds.py              # Script para consultar dados na tabela 'builds'
 │   ├── ler_champions.py           # Script para consultar dados na tabela 'champions'
@@ -35,7 +38,7 @@ src/
 
 A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 
-1. **picks** (referenciada em exemplos, mas ainda não implementada no código atual)
+1. **picks**
    - `id_pick` (INTEGER, Chave Primária)
    - `nome_pick` (TEXT,Obrigatório)
    - `id_champion` (INTEGER, Chave Estrangeira para a tabela `champions`)
@@ -53,6 +56,14 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 4. **builds**
    - `id_build` (INTEGER, Chave Primária)
    - `nome_build` (TEXT, Obrigatório)
+
+5. **jogo**
+   - `id_jogo` (INTEGER, Chave Primária)
+   - `id_pick` (INTEGER, Chave Estrangeira para a tabela `picks`)
+   - `kills` (INTEGER, Obrigatório)
+   - `deaths` (INTEGER, Obrigatório)
+   - `assists` (INTEGER, Obrigatório)
+   - `vitoria_derrota` (INTEGER, Obrigatório, Limitado aos valores 0 e 1)
 
 
 ## Funcionalidades
