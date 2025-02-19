@@ -1,15 +1,6 @@
 import sqlite3
-import sys
-import os
 
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','..')))
-
-# Current file directory
-current_dir = os.path.dirname(__file__)
-base_dir = os.path.abspath(os.path.join(current_dir, '..', '..'))
-db_path = os.path.join(base_dir, 'sqlite_database', 'lol.db')
-
-connection = sqlite3.connect(db_path)
+connection = sqlite3.connect('C:\\users\\ba2490\\Desktop\\projeto_final\\projeto_final\\sqlite_database\\lol.db')
 cursor = connection.cursor()
 
 cursor.execute('''
@@ -18,20 +9,9 @@ cursor.execute('''
                 nome_pick TEXT NOT NULL,
                 id_champion INTEGER NOT NULL,
                 id_roles INTEGER NOT NULL,
-                id_builds INTEGER NOT NULL
+                id_builds INTEGER NOT NULL,
                 )
                 ''')
-
-cursor.execute('''
-                CREATE TABLE IF NOT EXISTS jogo (
-               id_jogo INTEGER PRIMARY KEY AUTOINCREMENT,
-               id_pick INTEGER NOT NULL,
-               kills INTEGER NOT NULL,
-               deaths INTEGER NOT NULL,
-               assists INTEGER NOT NULL,
-               vitoria_derrota BOOL NOT NULL
-               )
-               ''')
 
 cursor.execute('''
                 CREATE TABLE IF NOT EXISTS champions (
@@ -53,6 +33,16 @@ cursor.execute('''
                 nome_build TEXT NOT NULL
                 )               
                 ''')
+
+cursor.execute('''
+               CREATE TABLE jogo (
+               id_jogo INTEGER PRIMARY KEY AUTOINCREMENT,
+               id_pick INTEGER NOT NULL,
+               kills INTEGER NOT NULL,
+               deaths INTEGER NOT NULL,
+               assists INTEGER NOT NULL,
+               vitoria_derrota INTEGER CHECK(vitoria_derrota IN (0,1))  NOT NULL
+               )''')
 
 connection.commit()
 connection.close()
