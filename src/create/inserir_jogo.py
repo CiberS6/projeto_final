@@ -33,4 +33,3 @@ def inserir_jogo():
     connection.close()
     
 
-inserir_jogo()
