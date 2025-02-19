@@ -73,6 +73,7 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 - **Inserção de dados:** Permite adicionar registros manualmente em todas as tabelas.
 - **Consulta de dados:** Realiza consultas SELECT para:
   - Listar todos os picks criados.
+  - Mostar os cálculos efetuados na função `math.py`
   - Obter detalhes de um campeão ou role pelo nome.
   - Realizar joins entre tabelas para obter detalhes combinados.
   - Listar todos os campeões cadastrados.
@@ -102,8 +103,11 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 - **`inserir_builds.py`:** Adiciona novas builds.
 - **`inserir_champions.py`:** Adiciona novos campeões.
 - **`inserir_picks.py`:** Adiciona novos picks com campeões, roles e builds
+- **`inserir_jogo.py`:** Adiciona novos registos de kills, mortes e assists no pick escolhido.
 - **`inserir_roles.py`:** Adiciona novos roles.
 - **`eliminar_picks.py`:** Exclui registros específicos da tabela `picks`.
+- **`math.py`:** Faz os cálculos para a winrate dos picks.
+- **`menu.py`:** Menu interativo de todas as funções no repositório.
 - **`ler_builds.py`:** Realiza consultas na tabela `builds`.
 - **`ler_champions.py`:** Realiza consultas na tabela `champions`.
 - **`ler_inner_join.py`:** Realiza joins entre tabelas para obter informações combinadas.
