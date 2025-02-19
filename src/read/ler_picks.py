@@ -13,7 +13,7 @@ connection = sqlite3.connect(db_path)
 cursor = connection.cursor()
 
 def ler_picks():
-    cursor.execute('SELECT id_pick, id_champion, id_roles FROM picks')
+    cursor.execute('SELECT id_pick FROM picks')
     resultados = cursor.fetchall()
  
     cursor.execute('''
@@ -28,5 +28,3 @@ def ler_picks():
     resultados_ = cursor.fetchall()
     for i,champions in zip(resultados_,resultados):
         print(i," ",champions)
- 
-        

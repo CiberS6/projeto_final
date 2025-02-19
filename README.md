@@ -22,6 +22,7 @@ src/
 ├── delete/
 │   └── eliminar_picks.py      # Script para excluir registros na tabela 'champions'
 ├── functions/
+│   ├── menu.py                # Script para executar o menu principal
 │   └── math.py                # Script para efetuar cálculos matemáticos
 ├── read/
 │   ├── ler_builds.py              # Script para consultar dados na tabela 'builds'
@@ -63,7 +64,7 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
    - `kills` (INTEGER, Obrigatório)
    - `deaths` (INTEGER, Obrigatório)
    - `assists` (INTEGER, Obrigatório)
-   - `vitoria_derrota` (INTEGER, Obrigatório, Limitado aos valores 0 e 1)
+   - `vitoria_derrota` (INTEGER, Obrigatório, Limitado aos valores 0 e 1<>)
 
 
 ## Funcionalidades
