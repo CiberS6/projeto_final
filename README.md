@@ -68,15 +68,14 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 
 
 ## Funcionalidades
-
+- **Menu de funcionalidades:** Executa o menu onde podem ser escolhidas as funcionalidades do repositório 
 - **Criação de tabelas:** Cria automaticamente as tabelas `picks`, `champions`, `roles` e `builds`, caso ainda não existam.
 - **Inserção de dados:** Permite adicionar registros manualmente em todas as tabelas.
 - **Consulta de dados:** Realiza consultas SELECT para:
-  - Listar todos os picks criados.
   - Mostar os cálculos efetuados na função `math.py`
   - Obter detalhes de um campeão ou role pelo nome.
   - Realizar joins entre tabelas para obter detalhes combinados.
-  - Listar todos os campeões cadastrados.
+  - Listar os registos das tabelas.
 - **Exclusão de dados:** Remove registros específicos na tabela `picks`.
 - **Atualização de dados:** Atualiza campos existentes na tabela `picks`.
 
