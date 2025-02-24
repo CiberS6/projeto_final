@@ -69,7 +69,7 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 
 ## Funcionalidades
 - **Menu de funcionalidades:** Executa o menu onde podem ser escolhidas as funcionalidades do repositório 
-- **Criação de tabelas:** Cria automaticamente as tabelas `picks`, `champions`, `roles` e `builds`, caso ainda não existam.
+- **Criação de tabelas:** Cria automaticamente as tabelas `picks`, `champions`, `roles`, `builds` e `jogo`, caso ainda não existam.
 - **Inserção de dados:** Permite adicionar registros manualmente em todas as tabelas.
 - **Consulta de dados:** Realiza consultas SELECT para:
   - Mostar os cálculos efetuados na função `math.py`
@@ -105,12 +105,12 @@ A base de dados SQLite `lol.db` consiste nas seguintes tabelas:
 - **`inserir_jogo.py`:** Adiciona novos registos de kills, mortes e assists no pick escolhido.
 - **`inserir_roles.py`:** Adiciona novos roles.
 - **`eliminar_picks.py`:** Exclui registros específicos da tabela `picks`.
-- **`math.py`:** Faz os cálculos para a winrate dos picks.
+- **`math.py`:** Faz os cálculos para a winrate e o kda dos picks.
 - **`menu.py`:** Menu interativo de todas as funções no repositório.
 - **`ler_builds.py`:** Realiza consultas na tabela `builds`.
 - **`ler_champions.py`:** Realiza consultas na tabela `champions`.
 - **`ler_inner_join.py`:** Realiza joins entre tabelas para obter informações combinadas.
-- **`ler_picks.py`:** Realiza consultas na tabela `picks`.
+- **`ler_picks.py`:** Realiza consultas na tabela `picks` e `jogo`.
 - **`ler_roles.py`:** Realiza consultas na tabela `roles`.
 - **`atualizar_picks.py`:** Atualiza os registos na tabela `picks`.
 
