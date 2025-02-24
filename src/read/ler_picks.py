@@ -28,3 +28,18 @@ def ler_picks():
     resultados_ = cursor.fetchall()
     for i,champions in zip(resultados_,resultados):
         print(i," ",champions)
+
+def ler_jogo():
+    cursor.execute('SELECT id_jogo FROM jogo')
+    do_ = cursor.fetchall()
+    cursor.execute('''
+                    SELECT picks.nome_pick FROM jogo
+                    INNER JOIN picks ON jogo.id_pick = picks.id_pick
+''')
+    do = cursor.fetchall()
+    cursor.execute('SELECT kills, deaths, assists FROM jogo')
+    do__ = cursor.fetchall()
+    
+    for pick,jogo,kda in zip(do,do_,do__):
+        print(jogo," ",pick," ",kda)
+    

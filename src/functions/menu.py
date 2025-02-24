@@ -8,7 +8,7 @@ from src.update.atualizar_picks import update_this
 from src.read.ler_picks import ler_picks
 from src.delete.eliminar_picks import eliminar_pick
 from src.create.inserir_jogo import inserir_jogo
-from src.functions.math import winrate
+from src.functions.math import winrate,kda
 
 
 
@@ -30,7 +30,8 @@ def menu():
                 4-Eliminar picks\n
                 5-Inserir jogo\n
                 6-Winrate\n
-                7-Sair\n
+                7-KDA\n
+                8-Sair\n
                     ''')
             opc = int(input("Escolha uma opção(de 1 a 7)\n=>"))
             match(opc):
@@ -47,6 +48,8 @@ def menu():
                 case 6:
                     winrate()
                 case 7:
+                    kda()
+                case 8:
                     break 
                 case _:
                     print("Escolha uma opção de 1 a 7")

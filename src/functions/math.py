@@ -5,7 +5,7 @@ import os
 
 sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..','..')))
 
-from src.read.ler_picks import ler_picks 
+from src.read.ler_picks import ler_picks, ler_jogo
 
 # Current file directory
 current_dir = os.path.dirname(__file__)
@@ -35,7 +35,27 @@ def winrate():
         play +=1
 
     win_rate = win_count*100/play
-    print(f"A winrate de {pick} é {win_rate}")        
+    print(f"A winrate de {pick} é {win_rate}")    
+
+
+def kda():
+
+    print()
+
+    ler_jogo()
+
+    pick = input("Escreva o numero do jogo para calcular a kda: ")
+
+    cursor.execute(f'SELECT kills, deaths, assists FROM jogo WHERE id_jogo = {pick}') 
+    kedea = cursor.fetchall() 
+    
+    for do in kedea:
+        kda = (do[0]+do[2])/do[1]
+    
+    print(f"O Jogador obteu um kda de {kda}")
+
+
+
 
 
 
